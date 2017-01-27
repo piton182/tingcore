@@ -3,6 +3,8 @@ package com.tingco.codechallenge.elevator.config;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+import com.tingco.codechallenge.elevator.api.ElevatorController;
+import com.tingco.codechallenge.elevator.api.impl.ElevatorControllerImpl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -58,4 +60,8 @@ public class ElevatorApplication {
         return new AsyncEventBus(Executors.newCachedThreadPool());
     }
 
+    @Bean
+    ElevatorController elevatorController() {
+        return new ElevatorControllerImpl(numberOfElevators);
+    }
 }

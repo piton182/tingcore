@@ -52,3 +52,6 @@ or start the target JAR file
     mvn package
     java -jar target/elevator-1.0-SNAPSHOT.jar
 
+## Solution
+
+Solution is demonstrated in IntegrationTest.java. The easiest is to just run the test in an IDE.
